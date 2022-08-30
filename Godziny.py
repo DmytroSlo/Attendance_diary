@@ -131,22 +131,16 @@ lst = [(1, '24.08.2022', '06:00', '18:00', '12', '272.40'),
        (1, '24.08.2022', '06:00', '18:00', '12', '272.40'),
        (1, '24.08.2022', '06:00', '18:00', '12', '272.40'),
        (1, '24.08.2022', '06:00', '18:00', '12', '272.40')]
-#lst.place(x = 10, y = 10)
-#lst.pack()
+
 
 heads = ['id', 'data', 'start', 'finish', 'houer', 'selery']
-table = ttk.Treeview(frame_add_list, show = 'headings')
+table = ttk.Treeview(frame_add_list, show = 'headings', height=16)
 table['columns'] = heads
+
 
 for header in heads:
     table.heading(header, text = header, anchor = 'w')
-    table.column(header, anchor = 'w', width = 210)
-    #table.column('id', anchor = 'w', width = 50)
-    #table.column('data', anchor = 'w', width = 350)
-    #table.column('start', anchor = 'w', width = 350)
-    #table.column('finish', anchor = 'w', width = 350)
-    #table.column('houer', anchor = 'w', width = 350)
-    #table.column('selery', anchor = 'w', width = 350)
+    table.column(header, anchor = 'w', width = 210, stretch = False)
 
 for row in lst:
     table.insert('', tk.END, values = row)
